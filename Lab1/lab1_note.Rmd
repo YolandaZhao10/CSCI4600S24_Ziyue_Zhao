@@ -1,0 +1,29 @@
+---
+title: "lab1"
+output: html_document
+date: "2024-01-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+temperature <- 22.5
+temperature = 22.5
+# "numeric"
+class(temperature)
+
+# "logical"
+isSnowing = TRUE
+class(isSnowing)
+
+# Vector 
+vec <- c(TRUE,"Y",1,2,3)
+class(vec)
+
+# matrix
+mat = c(1,2,2,2,2,2,2,2,2,4,5,6,7,8,9,10)
+matrix(mat,byrow = FALSE,nrow = 4)
+matrix(mat,byrow = T,nrow = 4)
+```
