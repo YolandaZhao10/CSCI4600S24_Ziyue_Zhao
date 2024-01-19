@@ -150,6 +150,8 @@ fitting(data)
 
 
 #EPI_regions
+library(magrittr)
+library(dplyr) 
 levels(as.factor(EPI_data$EPI_regions))
 EPI_South_Asia <- EPI_data %>% 
   select(c('EPI','EPI_regions','GEO_subregion' )) %>%
@@ -183,10 +185,25 @@ data <- as.numeric(data)
 exploration(data)
 fitting(data)
 
+EPI_data$DALY<-as.numeric(EPI_data$DALY)
+EPI_data$EPI<-as.numeric(EPI_data$EPI)
+shapiro.test(EPI_data$DALY)
 
 
-#library(readxl)
-#excel_sheets('c:/code/CSCI4600S24_Ziyue_Zhao/Lab1/2010EPI_data.xls')
-#EPI_data <- read_xls('c:/code/CSCI4600S24_Ziyue_Zhao/Lab1/2010EPI_data.xls')
+library(readxl)
+excel_sheets('c:/code/CSCI4600S24_Ziyue_Zhao/Lab1/2010EPI_data.xls')
+EPI_data1 <- read_xls('c:/code/CSCI4600S24_Ziyue_Zhao/Lab1/2010EPI_data.xls',sheet = 4)
 
+summary(EPI_data1$EPI)
+fivenum(EPI_data$EPI,na.rm = TRUE)
+fivenum(EPI_data1$EPI,na.rm=TRUE)
+boxplot(EPI_data1$EPI)
 
+#extreme value distrubution
+hist(EPI_data1$EPI)
+hist(EPI,seq(30.,95.,1.0), prob=TRUE)
+lines(density(EPI,na.rm=TRUE,bw="SJ"))
+df <- data.frame(EPI_data1$Population07,EPI_data1$WATER_H)
+df$EPI_data1.Population07<- as.numeric(df$EPI_data1.Population07)
+df <- df[!is.na(df),]
+plot(df)
