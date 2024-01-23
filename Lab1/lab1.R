@@ -105,6 +105,15 @@ data <- EPI_data$WATER_H
 exploration(data)
 fitting(data)
 
+# we could not graph use EPI_data$AIR_EWATER_E, because all fivenum is NA
+data <- EPI_data$AIR_EWATER_E
+
+data <- EPI_data$BIODIVERSITY
+exploration(data)
+fitting(data)
+
+
+
 # Exercise 2
 #EPILand<-EPI_data[!Landlock]
 EPILand <- EPI_data[Landlock==1,]
@@ -207,3 +216,290 @@ df <- data.frame(EPI_data1$Population07,EPI_data1$WATER_H)
 df$EPI_data1.Population07<- as.numeric(df$EPI_data1.Population07)
 df <- df[!is.na(df),]
 plot(df)
+
+
+# work on EPI_Data.csv file
+
+EPI_data <- read.csv("c:/code/CSCI4600S24_Ziyue_Zhao/Lab1/EPI_Data.csv")
+summary(EPI_data)
+data <- as.numeric(EPI_data$EPI)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
+
+data <- as.numeric(EPI_data$EPI)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
+# work on GPW3_GRUMP_SummaryInformation_2010.csv file
+GPW3_data <- read.csv("c:/code/CSCI4600S24_Ziyue_Zhao/Lab1/GPW3_GRUMP_SummaryInformation_2010.csv")
+summary(GPW3_data)
+data <- as.numeric(GPW3_data$PopulationPerUnit)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
+
+data <- as.numeric(GPW3_data$RefYearFirst)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
+
+data <- as.numeric(GPW3_data$Diff00)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
+
+data <- as.numeric(GPW3_data$Diff95)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
+
+data <- as.numeric(GPW3_data$Diff90)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
+
+
+data <- data.frame(as.numeric(GPW3_data$Diff90),as.numeric(GPW3_data$Diff95),as.numeric(GPW3_data$Diff00))
+colnames(data)<-c("Diff90","Diff95","Diff00")
+boxplot(data)
+
+
+# work on water-treatment.csv file
+water_treatment <- read.csv("c:/code/CSCI4600S24_Ziyue_Zhao/Lab1/water-treatment.csv")
+summary(water_treatment)
+data <- as.numeric(water_treatment$SS.E)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
+
+data <- as.numeric(water_treatment$SSV.E)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
+
+data <- as.numeric(water_treatment$SSV.P)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
+data <- data.frame(as.numeric(water_treatment$SSV.S),as.numeric(water_treatment$SSV.P),
+                   as.numeric(water_treatment$SSV.E),as.numeric(water_treatment$SSV.D))
+colnames(data)<-c("SSV.S","SSV.P","SSV.E","SSV.D")
+summary(data)
+boxplot(data)
+
+
+# work on 2016EPI_Raw_Data.xls file
+library(readxl)
+excel_sheets('c:/code/CSCI4600S24_Ziyue_Zhao/Lab1/2016EPI_Raw_Data.xls')
+EPI_data1 <- read_xls('c:/code/CSCI4600S24_Ziyue_Zhao/Lab1/2016EPI_Raw_Data.xls',sheet = 3)
+summary(EPI_data1)
+EPI_data1 <- EPI_data1[,-c(1:3)]
+EPI_data1[EPI_data1<=-9999] <- NA
+summary(EPI_data1)
+EPI_data1 <- na.omit(EPI_data1)
+boxplot(EPI_data1,scale = TRUE,center = TRUE)
+
+
+data <- as.numeric(EPI_data1$ACSAT.2009)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
+
+
+data <- as.numeric(EPI_data1$ACSAT.2010)
+tf <- is.na(data)
+data <- data[!tf]
+fivenum(data,na.rm=TRUE)
+min_data <- min(data,na.rm = TRUE)
+min_data <- floor(min_data)
+max_data <- max(data,na.rm = TRUE)
+max_data <- ceiling(max_data)
+hist(data, seq(min_data, max_data, 1.0), prob=TRUE)
+lines(density(data,na.rm=TRUE,bw=1.)) # or try bw=“SJ”
+lines(density(data,na.rm=TRUE,bw="SJ"))
+rug(data) 
+
+plot(ecdf(data), do.points=FALSE, verticals=TRUE)
+par(pty="s")
+qqnorm(data); qqline(data)
+x <- seq(min_data, max_data, 1.0)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for t dsn")
+qqline(x)
+
