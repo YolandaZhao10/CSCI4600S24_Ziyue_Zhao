@@ -29,7 +29,8 @@ RPI_Weather_Week$temp
 RPI_Weather_Week$snowed
 subset(RPI_Weather_Week,subset=snowed==TRUE)
 
-sorted.snowed <- order(RPI_Weather_Week['snowed'])
+
+sorted.snowed <- order(RPI_Weather_Week$snowed)
 sorted.snowed
 RPI_Weather_Week[sorted.snowed,]
 
