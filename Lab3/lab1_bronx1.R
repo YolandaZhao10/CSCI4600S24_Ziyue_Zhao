@@ -6,16 +6,16 @@ coln <- bronx1[4,]
 bronx1 <- bronx1[-c(1:4),]
 colnames(bronx1)<- coln
 bronx1<-bronx1[which(bronx1$`GROSS SQUARE FEET`!="0" & bronx1$`LAND SQUARE FEET`!="0" & bronx1$`SALE\nPRICE`!="0"),]
-
-#alternate
-#library("xlsx", lib.loc="/Library/Frameworks/R.framework/Versions/3.0/Resources/library")
-#bronx1<-read.xlsx("<SOMEWHERE>/rollingsales_bronx.xls",pattern="BOROUGH",stringsAsFactors=FALSE,sheetIndex=1,startRow=5,header=TRUE)
-View(bronx1)
-#
 names(bronx1)[names(bronx1) == "SALE\nPRICE"] <- "SALE.PRICE"
 names(bronx1)[names(bronx1) == "GROSS SQUARE FEET"] <- "GROSS.SQUARE.FEET"
 names(bronx1)[names(bronx1) == "LAND SQUARE FEET"] <- "LAND.SQUARE.FEET"
 names(bronx1)[names(bronx1) == "BUILDING CLASS CATEGORY"] <- "BUILDING.CLASS.CATEGORY"
+
+#alternate
+#library("xlsx", lib.loc="/Library/Frameworks/R.framework/Versions/3.0/Resources/library")
+#bronx1<-read.xlsx("<SOMEWHERE>/rollingsales_bronx.xls",pattern="BOROUGH",stringsAsFactors=FALSE,sheetIndex=1,startRow=5,header=TRUE)
+#View(bronx1)
+#
 attach(bronx1) # If you choose to attach, leave out the "data=." in lm regression
 SALE.PRICE<-sub("\\$","",SALE.PRICE) 
 SALE.PRICE<-as.numeric(gsub(",","", SALE.PRICE)) 
@@ -33,7 +33,8 @@ m2<-lm(log(SALE.PRICE)~log(GROSS.SQUARE.FEET)+log(LAND.SQUARE.FEET)+factor(NEIGH
 summary(m2)
 plot(resid(m2))
 # Suppress intercept - using "0+ ..."
-m2a<-lm(log(SALE.PRICE)~0+log(GROSS.SQUARE.FEET)+log(LAND.SQUARE.FEET)+factor(NEIGHBORHOOD))
+#m2a<-lm(log(SALE.PRICE)~0+log(GROSS.SQUARE.FEET)+log(LAND.SQUARE.FEET)+factor(NEIGHBORHOOD))
+m2a <- lm(log(SALE.PRICE) ~ 0 + log(GROSS.SQUARE.FEET) + log(LAND.SQUARE.FEET) + factor(NEIGHBORHOOD))
 summary(m2a)
 plot(resid(m2a))
 
