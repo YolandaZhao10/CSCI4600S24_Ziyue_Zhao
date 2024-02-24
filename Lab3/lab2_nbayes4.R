@@ -4,7 +4,6 @@ library(ElemStatLearn)
 library(klaR) # different from e1071 naivebayes - try it too!
 library(caret)
 data(spam, package="ElemStatLearn")
-
 sub = sample(nrow(spam), floor(nrow(spam) * 0.9))
 train = spam[sub,]
 test = spam[-sub,]
@@ -30,3 +29,4 @@ nb.pred <- predict(nb.res, spam[-train.ind,])
 
 # but this also works on the training sample, i.e. without using a `newdata`
 head(predict(nb.res))
+
