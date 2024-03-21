@@ -1,0 +1,16 @@
+library(rpart)
+library(party)
+library(cluster)
+
+data(Titanic)
+Titanic_df <- as.data.frame(Titanic)
+rpart_model <- rpart(Survived ~ ., data = Titanic_df, method = "class")
+ctree_model <- ctree(Survived ~ ., data = Titanic_df)
+numeric_data <- Titanic_df[, sapply(Titanic_df, is.numeric)]
+scaled_data <- scale(numeric_data)
+hclust_model <- hclust(dist(scaled_data))
+plot(rpart_model)
+text(rpart_model, use.n = TRUE)
+plot(ctree_model)
+plot(hclust_model)
+groups <- cutree(hclust_model, k = 5)
