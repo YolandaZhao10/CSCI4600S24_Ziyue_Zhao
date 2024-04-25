@@ -1,0 +1,120 @@
+Point 1 results:
+	Descriptive statistics:
+		Mean: 301.11817159712723
+		Standard Deviation: 10.211340501610877
+		Interquartile Range: 18.589980468750014
+		Skewness: -0.05872326735435399
+
+	Shapiro test result:
+		Statistic: 0.9427645802497864
+		p-value: 3.5431697880068723e-16
+		The data is not normally distributed
+
+	SVR result:
+		Mean Squared Error:   9363172476
+		R2 Score: 0.875817844088215
+
+	KNN regression result:
+		Mean Squared Error: 6.661013335099571
+		R2 Score: 0.9309769247529848
+
+	Auto regression model result:
+		Mean Squared Error for point 1: 3.112920018234772
+		Mean Absolute Error for point 1: 1.3765420550051632
+		Root Mean Squared Error for point 1: 1.764346909832296
+
+	ARIMA model result:
+		Mean Squared Error for point 1: 3.0578464191745534
+		Mean Absolute Error for point 1: 1.3597684669112877
+		Root Mean Squared Error for point 1: 1.7486699000024428
+
+Point 2 results:
+	Descriptive statistics:
+		Mean: 286.4492933481532
+		Standard Deviation: 9.479661833967363
+		Interquartile Range: 16.185000000000002
+		Skewness: -0.1681504355070392
+
+	Shapiro test result:
+		Statistic: 0.9622425436973572
+		p-value: 8.80238210879819e-13
+		The data is not normally distributed
+
+	SVR result:
+		Mean Squared Error: 19.61096207122939
+		R2 Score: 0.7604105101603946
+
+	KNN regression result:
+		Mean Squared Error: 13.788325852612076
+		R2 Score: 0.8315463593896761
+
+	Auto regression model result:
+		Mean Squared Error for point 2: 4.81661587111081
+		Mean Absolute Error for point 2: 1.7663090714886809
+		Root Mean Squared Error for point 2: 2.194678990447307
+
+	ARIMA model result:
+		Mean Squared Error for point 2: 4.765339046712366
+		Mean Absolute Error for point 2: 1.7584231498362486
+		Root Mean Squared Error for point 2: 2.1829656540386444
+
+Point 3 results:
+	Descriptive statistics:
+		Mean: 274.0509622948016
+		Standard Deviation: 12.398787842061987
+		Interquartile Range: 20.600000000000023
+		Skewness: -0.19059142655632194
+
+	Shapiro test result:
+		Statistic: 0.9705519676208496
+		p-value: 5.790581902864744e-11
+		The data is not normally distributed
+
+	SVR result:
+		Mean Squared Error: 23.01587818966168
+		R2 Score: 0.8141519570850005
+
+	KNN regression result:
+		Mean Squared Error: 17.119051380386484
+		R2 Score: 0.861767508092077
+
+	Auto regression model result:
+		Mean Squared Error for point 3: 11.560616499286013
+		Mean Absolute Error for point 3: 2.5676578694044587
+		Root Mean Squared Error for point 3: 3.4000906604509846
+
+	ARIMA model result:
+		Mean Squared Error for point 3: 11.546829133282024
+		Mean Absolute Error for point 3: 2.5787877328726556
+		Root Mean Squared Error for point 3: 3.398062555822365
+
+Point 4 results:
+	Descriptive statistics:
+		Mean: 281.20665312927497
+		Standard Deviation: 11.919947838718135
+		Interquartile Range: 18.72001953124999
+		Skewness: -0.4363827136428399
+
+	Shapiro test result:
+		Statistic: 0.9594153761863708
+		p-value: 2.4375090162433166e-13
+		The data is not normally distributed
+
+	SVR result:
+		Mean Squared Error: 44.737904570938596
+		R2 Score: 0.7228228489553129
+
+	KNN regression result:
+		Mean Squared Error: 29.455806024941655
+		R2 Score: 0.8175042735233102
+
+	Auto regression model result:
+		Mean Squared Error for point 4: 7.922766983274867
+		Mean Absolute Error for point 4: 2.1744199775240354
+		Root Mean Squared Error for point 4: 2.8147410153111543
+
+	ARIMA model result:
+		Mean Squared Error for point 4: 7.851459213408702
+		Mean Absolute Error for point 4: 2.1669736178073125
+		Root Mean Squared Error for point 4: 2.8020455409233986
+
